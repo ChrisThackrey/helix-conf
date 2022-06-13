@@ -41,7 +41,7 @@ newline = "all"
 space = "·"
 nbsp = "⍽"
 tab = "→"
-newline = "⏎"
+newline = "↲" #⏎
 
 [editor.search]
 smart-case = true
