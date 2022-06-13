@@ -1,0 +1,65 @@
+theme = "challenger_deep"
+
+[editor]
+scrolloff = 5
+line-number = "relative"
+auto-completion = true
+auto-info = true
+completion-trigger-len = 2
+true-color = true
+# shell = ["fish", "-l -c"]
+# rulers = [100]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+git-global = true
+git-ignore = true
+parents = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[keys.normal]
+# C-s = ":w" # Maps the Control-s to the typable command :w which is an alias for :write (save file)
+# C-o = ":open ~/.config/helix/config.toml" # Maps the Control-o to opening of the helix config file
+"D" = ["extend_to_line_bounds", "delete_selection"]
+# a = "move_char_left" # Maps the 'a' key to the move_char_left command
+# w = "move_line_up" # Maps the 'w' key move_line_up
+"C-S-esc" = "extend_line" # Maps Control-Shift-Escape to extend_line
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+
+[keys.select]
+"D" = ["extend_to_line_bounds", "delete_selection"]
+
+[keys.insert]
+"A-x" = "normal_mode" # Maps Alt-X to enter normal mode
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
