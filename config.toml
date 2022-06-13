@@ -1,4 +1,4 @@
-theme = "challenger_deep"
+theme = "catppuccinn_mocha"
 
 [editor]
 scrolloff = 5
@@ -13,7 +13,7 @@ true-color = true
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
-select = "block"
+select = "underline"
 
 [editor.file-picker]
 hidden = false
