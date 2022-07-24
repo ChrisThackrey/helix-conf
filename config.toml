@@ -1,67 +1,60 @@
-theme = "catppuccinn_mocha"
+theme = "tokyonight_storm"
 
 [editor]
-scrolloff = 5
-line-number = "relative"
-auto-completion = true
-auto-info = true
-completion-trigger-len = 2
+middle-click-paste = false
+line-number = "absolute"
+mouse = true
 true-color = true
-shell = ["fish", "-l -c"]
-# rulers = [100]
+scroll-lines = 10
+scrolloff = 3
+completion-trigger-len = 3
+cursor-shape = { insert = "bar", normal = "block", select = "underline" }
+whitespace.render = "all"
+whitespace.characters = { space = " ", tab = "▏", newline = "¬" }
+lsp = { display-messages = true }
+file-picker = { hidden = false }
 
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
-
-[editor.file-picker]
-hidden = false
-git-global = true
-git-ignore = true
-parents = true
-
-[editor.lsp]
-display-messages = true
-
-[editor.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-'`' = '`'
-'<' = '>'
-
-[editor.whitespace.render]
-space = "none"
-tab = "all"
-newline = "all"
-
-[editor.whitespace.characters]
-space = "·"
-nbsp = "⍽"
-tab = "→"
-newline = "↲" #⏎
-
-[editor.search]
-smart-case = true
-wrap-around = true
-
+# Keymap for the Colemak layout and Kakoune habits (who needs a select mode)
 [keys.normal]
+# j = "move_line_up"
+# k = "move_line_down"
+# H = "extend_char_left"
+# J = "extend_line_up"
+# K = "extend_line_down"
+# L = "extend_char_right"
+# D = "remove_primary_selection"  # like in kakoune, non-obvious name for 'opposite of C'
+# W = "extend_next_word_start"
+# B = "extend_prev_word_start"
+# T = "extend_till_char"
+# F = "extend_next_char"
+# "A-t" = "till_prev_char"
+# "A-f" = "find_prev_char"
+# "A-T" = "extend_till_prev_char"
+# "A-F" = "extend_prev_char"
+# "C-j" = "join_selections"       # instead of J
+# "#" = "toggle_comments"
+# "$" = "extend_to_line_end"
+# "^" = "extend_to_line_start"
+# "{" = "goto_prev_paragraph"
+# "}" = "goto_next_paragraph"
+# "left" = "goto_previous_buffer"
+# "right" = "goto_next_buffer"
+# "space" = { "q" = ":bc" }
 # C-s = ":w" # Maps the Control-s to the typable command :w which is an alias for :write (save file)
 # C-o = ":open ~/.config/helix/config.toml" # Maps the Control-o to opening of the helix config file
-# a = "move_char_left" # Maps the 'a' key to the move_char_left command
-# w = "move_line_up" # Maps the 'w' key move_line_up
-g = { a = "code_action" } # Maps `ga` to show possible code actions
-"space" = { "space" = "file_picker" }
-"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
-"D" = ["extend_to_line_bounds", "delete_selection"]
-"C-S-esc" = "extend_line" # Maps Control-Shift-Escape to extend_line
-
-[keys.select]
-"D" = ["extend_to_line_bounds", "delete_selection"]
-
+# # a = "move_char_left" # Maps the 'a' key to the move_char_left command
+# # w = "move_line_up" # Maps the 'w' key move_line_up
+# # "C-S-esc" = "extend_line" # Maps Control-Shift-Escape to extend_line
+# g = { a = "code_action" } # Maps `ga` to show possible code actions
+# "ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
+# Z = { Z = ":wq", Q = ":q!" } # Save and quit
+#
 [keys.insert]
-"A-x" = "normal_mode" # Maps Alt-X to enter normal mode
+# C-s = ":w"
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
-k = { j = "normal_mode" } # Maps `kj` to exit insert mode
+#
+[keys.select]
+j = "extend_line_up"
+k = "extend_line_down"
+# "{" = "extend_prev_paragraph" # doesn't exist yet
+# "}" = "extend_next_paragraph"
