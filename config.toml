@@ -1,7 +1,7 @@
 theme = "sitruuna"
 
 [editor]
-line-number = "relative"
+# line-number = "relative"
 mouse = true
 
 [editor.lsp]
@@ -13,60 +13,13 @@ normal = "block"
 select = "underline"
 
 [keys.insert]
-j = { j = "normal_mode" }
-j = { k = "normal_mode" }
+j = { j = "normal_mode", k = "normal_mode" }
 
 [keys.normal]
-"space" = { "space" = "file_picker"}
-"?" = { "?" = "global_search"}
-"semicolon" = "command_mode"
-"K" = "hover"
-"G" = "goto_last_line"
-"$" = "goto_line_end"
-[keys.select]
-"G" = "goto_last_line"
+"S-k" = "hover"
+"S-g" = "goto_last_line"
+"S-4" = "goto_line_end"
+"ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
 
-# Keymap for the Colemak layout and Kakoune habits (who needs a select mode)
-# [keys.normal]
-# j = "move_line_up"
-# k = "move_line_down"
-# H = "extend_char_left"
-# J = "extend_line_up"
-# K = "extend_line_down"
-# L = "extend_char_right"
-# D = "remove_primary_selection"  # like in kakoune, non-obvious name for 'opposite of C'
-# W = "extend_next_word_start"
-# B = "extend_prev_word_start"
-# T = "extend_till_char"
-# F = "extend_next_char"
-# "A-t" = "till_prev_char"
-# "A-f" = "find_prev_char"
-# "A-T" = "extend_till_prev_char"
-# "A-F" = "extend_prev_char"
-# "C-j" = "join_selections"       # instead of J
-# "#" = "toggle_comments"
-# "$" = "extend_to_line_end"
-# "^" = "extend_to_line_start"
-# "{" = "goto_prev_paragraph"
-# "}" = "goto_next_paragraph"
-# "left" = "goto_previous_buffer"
-# "right" = "goto_next_buffer"
-# "space" = { "q" = ":bc" }
-# C-s = ":w" # Maps the Control-s to the typable command :w which is an alias for :write (save file)
-# C-o = ":open ~/.config/helix/config.toml" # Maps the Control-o to opening of the helix config file
-# # a = "move_char_left" # Maps the 'a' key to the move_char_left command
-# # w = "move_line_up" # Maps the 'w' key move_line_up
-# # "C-S-esc" = "extend_line" # Maps Control-Shift-Escape to extend_line
-# g = { a = "code_action" } # Maps `ga` to show possible code actions
-# "ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
-# Z = { Z = ":wq", Q = ":q!" } # Save and quit
-#
-# [keys.insert]
-# C-s = ":w"
-# j = { k = "normal_mode" } # Maps `jk` to exit insert mode
-#
-# [keys.select]
-# j = "extend_line_up"
-# k = "extend_line_down"
-# "{" = "extend_prev_paragraph" # doesn't exist yet
-# "}" = "extend_next_paragraph"
+[keys.select]
+"S-g" = "goto_last_line"
