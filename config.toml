@@ -1,21 +1,33 @@
-theme = "tokyonight_storm"
+theme = "sitruuna"
 
 [editor]
-middle-click-paste = false
-line-number = "absolute"
+line-number = "relative"
 mouse = true
-true-color = true
-scroll-lines = 10
-scrolloff = 3
-completion-trigger-len = 3
-cursor-shape = { insert = "bar", normal = "block", select = "underline" }
-whitespace.render = "all"
-whitespace.characters = { space = " ", tab = "▏", newline = "¬" }
-lsp = { display-messages = true }
-file-picker = { hidden = false }
+
+[editor.lsp]
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.insert]
+j = { j = "normal_mode" }
+j = { k = "normal_mode" }
+
+[keys.normal]
+"space" = { "space" = "file_picker"}
+"?" = { "?" = "global_search"}
+"semicolon" = "command_mode"
+"K" = "hover"
+"G" = "goto_last_line"
+"$" = "goto_line_end"
+[keys.select]
+"G" = "goto_last_line"
 
 # Keymap for the Colemak layout and Kakoune habits (who needs a select mode)
-[keys.normal]
+# [keys.normal]
 # j = "move_line_up"
 # k = "move_line_down"
 # H = "extend_char_left"
@@ -49,12 +61,12 @@ file-picker = { hidden = false }
 # "ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
 # Z = { Z = ":wq", Q = ":q!" } # Save and quit
 #
-[keys.insert]
+# [keys.insert]
 # C-s = ":w"
-j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+# j = { k = "normal_mode" } # Maps `jk` to exit insert mode
 #
-[keys.select]
-j = "extend_line_up"
-k = "extend_line_down"
+# [keys.select]
+# j = "extend_line_up"
+# k = "extend_line_down"
 # "{" = "extend_prev_paragraph" # doesn't exist yet
 # "}" = "extend_next_paragraph"
