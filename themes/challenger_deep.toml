@@ -48,7 +48,6 @@
 "function.builtin" = { fg = "cyan" }
 "function.macro" = { fg = "cyan" }
 "namespace" = { fg = "dark-blue"}
-"special" = { fg = "blue" }
 "constructor" = { fg = "blue" }
 "tag" = { fg = "red" }
  

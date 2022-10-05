@@ -1,4 +1,4 @@
-theme = "embark"
+theme = "challenger_deep"
 
 [editor]
 line-number = "relative"
@@ -25,7 +25,7 @@ right = ["diagnostics", "selections", "position"]
 [keys.normal]
 "ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
 "A-ret" = ["open_above", "normal_mode"] # Maps the enter key to open_above then re-enter normal mode
-"A-;" = ["save_selection", "append_to_line", ":append-output echo ';'", "delete_char_forward", "jump_backward", "normal_mode"]
+"A-;" = ["save_selection", "insert_at_line_end", ":append-output echo ';'", "delete_char_forward", "jump_backward", "normal_mode"]
 "backspace" = { c = ":config-open", l = ":config-reload", r = ":sh cargo run", s = [":write", ":config-reload"] }
 
 # Quick iteration on config changes
@@ -108,7 +108,7 @@ esc = ["collapse_selection", "normal_mode"]
 "end" = "goto_line_end_newline"
 "C-e" = "goto_line_end_newline"
 # "A-;" = ["normal_mode", "collapse_selection", "save_selection", "extend_to_line_bounds", "trim_selections", "collapse_selection", ":append-output echo ';'", "extend_line_below", "join_selections", "jump_backward", "insert_mode"]
-"A-;" = ["save_selection", "append_to_line", ":append-output echo ';'", "delete_char_forward", "jump_backward"]
+"A-;" = ["save_selection", "insert_at_line_end", ":append-output echo ';'", "delete_char_forward", "jump_backward"]
 "A-left" = "goto_line_start"
 j = { j = "normal_mode", k = "normal_mode" }
 
