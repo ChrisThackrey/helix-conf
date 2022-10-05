@@ -14,6 +14,13 @@ scope = "source.markdown"
 roots = []
 
 [[language]]
+name = "bash"
+language-server = { command = "bash-language-server" }
+file-types = ["bash_prompt","bash_profile", "bashrc", "profile", "sh", "zsh", "conf"]
+scope = "source.conf"
+roots = []
+
+[[language]]
 name = "rust"
 language-server = { command = "rustup", args = [
   "run",
