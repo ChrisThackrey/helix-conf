@@ -6,16 +6,23 @@ name = "astro"
 scope = "source.astro"
 injection-regex = "astro"
 file-types = ["astro"]
+# roots = []
 roots = ["package.json", "tsconfig.json", "jsconfig.json", ".git"]
+comment-token = "//"
 indent = { tab-width = 2, unit = "  " }
-language-server = { command = "astro-ls", args = ["--studio"] }
-config = { configuration = {}, typescript = { serverPath = "" } }
+language-server = { command = "astro-ls", args = ["--stdio"] }
+# formatter = { command = "PRETTIERD_DEFAULT_CONFIG='/home/samus/.config/.prettierrc' prettierd", args = ["{0}"] }
+formatter = { command = "prettierd", args = ["*.astro"] }
+auto-format = true
+
+[[grammar]]
+name = "astro"
+source = { git = "https://github.com/virchau13/tree-sitter-astro", rev = "5f5c3e73c45967df9aa42f861fad2d77cd4e0900" }
 
 # React Javascript
 [[language]]
 name = "jsx"
 auto-format = true
-# Resolve conflicts
 [[language]]
 name = "html"
 auto-format = false
@@ -29,6 +36,7 @@ file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 auto-format = true
 language-server = { command = "rust-analyzer" }
+# formatter = { command = "rustfmt" }
 indent = { tab-width = 2, unit = "  " }
 
 [language.config]
