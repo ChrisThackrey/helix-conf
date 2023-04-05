@@ -1,4 +1,4 @@
-theme = "mellow"
+theme = "catppuccin_mocha"
 
 [editor]
 mouse = true
@@ -10,11 +10,17 @@ scroll-lines = 1
 color-modes = true
 bufferline = "multiple"
 shell = ["bash", "-c"]
-gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 completion-trigger-len = 2
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.gutters.line-numbers]
+min-width = 1
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 
 [editor.search]
 smart-case = true
@@ -28,7 +34,13 @@ insert = "bar"
 '[' = ']'
 '"' = '"'
 '`' = '`'
-'<' = '>'
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0 # 40
+wrap-indicator = "↪"  # set wrap-indicator to "" to hide it
+wrap-at-text-width = false
 
 [editor.whitespace.render]
 space = "none"
@@ -58,7 +70,7 @@ left = [
   "spacer",
   "total-line-numbers",
 ]
-center = ["file-name", "spacer", "diagnostics"]
+center = ["file-name", "version-control", "spacer", "diagnostics"]
 right = ["selections", "position", "file-type", "spacer"]
 separator = "│"
 
