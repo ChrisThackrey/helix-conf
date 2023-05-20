@@ -1,16 +1,19 @@
-theme = "catppuccin_mocha"
+theme = "amberwood"
 
 [editor]
 mouse = true
-idle-timeout = 80
 cursorline = true
 true-color = true
 scrolloff = 8
 scroll-lines = 1
 color-modes = true
+auto-save = false
 bufferline = "multiple"
-shell = ["bash", "-c"]
-completion-trigger-len = 2
+rulers = [120]
+auto-pairs = true
+shell = ["zsh", "-c"]
+completion-trigger-len = 1
+idle-timeout = 80
 
 [editor.gutters]
 layout = ["diff", "diagnostics", "line-numbers", "spacer"]
@@ -27,20 +30,15 @@ smart-case = true
 
 [editor.cursor-shape]
 insert = "bar"
+normal = "block"
+select = "block"
 
-[editor.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-'`' = '`'
-
-[editor.soft-wrap]
-enable = true
-max-wrap = 25 # increase value to reduce forced mid-word wrapping
-max-indent-retain = 0 # 40
-wrap-indicator = "↪"  # set wrap-indicator to "" to hide it
-wrap-at-text-width = false
+# [editor.soft-wrap]
+# enable = true
+# max-wrap = 25              # increase value to reduce forced mid-word wrapping
+# max-indent-retain = 0      # 40
+# wrap-indicator = "↪"       # set wrap-indicator to "" to hide it
+# wrap-at-text-width = false
 
 [editor.whitespace.render]
 space = "none"
@@ -48,7 +46,7 @@ tab = "all"
 newline = "none"
 
 [editor.whitespace.characters]
-space = "·"
+# space = "·"
 nbsp = "⍽"
 tab = "▏"
 newline = "⏎"
@@ -56,22 +54,41 @@ newline = "⏎"
 
 [editor.indent-guides]
 render = true
-character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
-skip-levels = 1
+character = "╎" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+# skip-levels = 1
 
 [editor.statusline]
+# left = [
+#   "mode",
+#   "spacer",
+#   "separator",
+#   "spacer",
+#   "spinner",
+#   "position-percentage",
+#   "spacer",
+#   "total-line-numbers",
+# ]
+# center = ["file-name", "version-control", "spacer", "diagnostics"]
+# right = ["selections", "position", "file-type", "spacer"]
 left = [
   "mode",
-  "spacer",
-  "separator",
-  "spacer",
   "spinner",
+  "file-name",
+  "file-type",
+  "total-line-numbers",
+  "file-encoding",
+]
+center = []
+right = [
+  "selections",
+  "primary-selection-length",
+  "position",
   "position-percentage",
   "spacer",
-  "total-line-numbers",
+  "diagnostics",
+  "workspace-diagnostics",
+  "version-control",
 ]
-center = ["file-name", "version-control", "spacer", "diagnostics"]
-right = ["selections", "position", "file-type", "spacer"]
 separator = "│"
 
 [keys.normal]
@@ -189,14 +206,7 @@ esc = ["collapse_selection", "keep_primary_selection"]
 space = { "c" = "toggle_comments", "|" = "global_search" }
 
 [keys.insert]
-# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "normal_mode"]
-# "up" = "move_line_up"
-# "down" = "move_line_down"
-# "left" = "move_char_left"
-# "right" = "move_char_right"
-# "C-b" = "move_char_left"
-# "C-f" = "move_char_right"
 "A-b" = "move_prev_word_end"
 "C-left" = "move_prev_word_end"
 "A-f" = "move_next_word_start"
@@ -219,6 +229,7 @@ esc = ["collapse_selection", "normal_mode"]
 ]
 "A-left" = "goto_line_start"
 "A-right" = "goto_line_start"
+" " = ["collapse_selection", ":insert-output printf ' '", "move_char_right"]
 
 [keys.select]
 # Muscle memory
